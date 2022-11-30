@@ -15,7 +15,7 @@ const knex = require('knex')({
       host : 'private-subnet.cluster-cbdo9oytyewz.us-east-2.rds.amazonaws.com',
       port : 3306,
       user : 'admin',
-      password : 'tabs123!',
+      password : 'admin123',
       database : 'IS'
     }
   });
