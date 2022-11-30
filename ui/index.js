@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended:true}));
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : 'private-subnet.cluster-cbdo9oytyewz.us-east-2.rds.amazonaws.com',
+      host : 'professor-db.cluster-cbdo9oytyewz.us-east-2.rds.amazonaws.com',
       port : 3306,
       user : 'admin',
       password : 'admin123',
@@ -28,14 +28,14 @@ listenPort); });
 
 app.get("/", async function (req, res) {
     // const cInfo = [];
-    // const pInfo = await knex('Professor').orderBy('professorID');
+    const pInfo = await knex('Professor').orderBy('professorID');
     // for(i = 0; i < pInfo.length; i ++){
     //   let temp = await knex('Classes').where('professorID', pInfo[i].professorID).orderBy('professorID');
     //   cInfo.push(temp);
     // } 
 
 
-    // res.render("index", {pData: pInfo, cData: cInfo});
-    res.render("index");
+    res.render("index", {pData: pInfo});
+    // res.render("index");
 });
 
