@@ -1,0 +1,34 @@
+version: 0.0
+os: linux
+files:
+  - source: /public
+    destination: /var/www/html/public  
+  - source: /package.json
+    destination: /var/www/html/   
+  - source: /package-lock.json
+    destination: /var/www/html/   
+  - source: /index.js
+    destination: /var/www/html/ 
+  - source: /node_modules
+    destination: /var/www/html/node_modules
+  - source: /Views
+    destination: /var/www/html/views
+
+
+hooks:
+  BeforeInstall:
+    - location: Scripts/install_dependencies
+      timeout: 300
+      runas: root
+    - location: Scripts/start_server
+      timeout: 300
+      runas: root
+  AfterInstall:
+  - location: Scripts/start_node
+    timeout: 300
+    runas: root
+  ApplicationStop:
+    - location: Scripts/stop_server
+      timeout: 300
+      runas: root
+
