@@ -33,9 +33,10 @@ app.get("/", async function (req, res) {
     //   let temp = await knex('Classes').where('professorID', pInfo[i].professorID).orderBy('professorID');
     //   cInfo.push(temp);
     // } 
-
-    res.status(200);
     res.render("index", {pData: pInfo});
     // res.render("index");
 });
 
+app.get("/health", async function (req, res) {
+  res.sendStatus(200);
+});
