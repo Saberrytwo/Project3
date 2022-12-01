@@ -34,7 +34,7 @@ app.get("/", async function (req, res) {
     //   cInfo.push(temp);
     // } 
 
-
+    res.status(200);
     res.render("index", {pData: pInfo});
     // res.render("index");
 });
