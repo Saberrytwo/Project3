@@ -38,5 +38,5 @@ app.get("/", async function (req, res) {
 });
 
 app.get("/health", async function (req, res) {
-  res.sendStatus(200);
+  res.writeHead(200, {'Content-Type': 'text/plain','Content-Length':3495});
 });
