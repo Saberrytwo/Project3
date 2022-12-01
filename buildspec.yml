@@ -19,4 +19,4 @@ phases:
       - docker-compose --file='nginx/docker-compose-prod.yml' push
 artifacts:
   files:
-    - 'dockerrun.aws.json'
+    - 'Dockerrun.aws.json'
