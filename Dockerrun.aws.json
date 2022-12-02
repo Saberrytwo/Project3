@@ -13,20 +13,6 @@
             "containerPort": 8080
           }
         ]
-      },
-      {
-        "name": "nginx",
-        "image": "637904357981.dkr.ecr.us-east-2.amazonaws.com/app-nginx",
-        "hostname": "nginx",
-        "essential": true,
-        "portMappings": [ 
-          {
-            "hostPort": 80,
-            "containerPort": 80
-          }
-        ],
-        "links": ["ui"],
-        "memory": 512
       }
     ]
   }
