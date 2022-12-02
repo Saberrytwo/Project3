@@ -1,0 +1,8 @@
+version: '3'
+services: 
+  api: 
+    build: 
+      context: ./ui
+    container_name: ui
+    ports: 
+      - "8080:8080"
