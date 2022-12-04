@@ -11,10 +11,6 @@ phases:
       - echo Building the Docker node image...          
       - docker build -t node-app:latest .
       - docker tag node-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/node-app:latest 
-      - echo Building the Docker nginx image...  
-      - cd nginx        
-      - docker build -t node-nginx:latest .
-      - docker tag node-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/node-nginx:latest 
   post_build:
     commands:
       - echo Build completed on `date`
